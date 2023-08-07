@@ -8,6 +8,13 @@ const shopRoutes = require("./routes/shop");
 
 const app = express();
 
+// set a global confiration value
+app.set("view engine", "pug");
+
+// set auto views to custom folder
+// in our case views is same named so not required
+app.set("views", "views");
+
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use("/admin", adminData.routes);
